@@ -56,6 +56,7 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden; /* to remove the shakiness in the animation... determines if the backpart of the element is visible/hidden for the user */
 }
 
 .heading-primary-main {
@@ -63,6 +64,7 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation: move-in-left ease-out 1s;
 }
 
 .heading-primary-sub {
@@ -70,4 +72,33 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation: move-in-right ease-out 1s;
+}
+
+@keyframes move-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
