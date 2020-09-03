@@ -51,6 +51,15 @@
   &--white::after {
     background-color: $color-white;
   }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &--green::after {
+    background-color: $color-primary;
+  }
 }
 
 .btn-text {
